@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Món Ăn - Hôm Nay Ăn Gì?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>📋 Danh Sách Món Ăn</h2>
+                <button id="clearAllBtn" class="btn-clear-all" onclick="clearAllFoods()" title="Xóa tất cả">
+                    🗑️
+                </button>
+            </div>
+            
+            <div class="add-food-section">
+                <form id="addFoodForm" class="add-food-form">
+                    <input 
+                        type="text" 
+                        id="foodInput" 
+                        class="food-input" 
+                        placeholder="Nhập tên món ăn..."
+                        required
+                    >
+                    <button type="submit" class="btn btn-add">
+                        <span>+</span> Thêm món
+                    </button>
+                </form>
+            </div>
+
+            <div class="food-list-container">
+                <div id="foodList" class="food-list">
+                </div>
+                <div id="emptyState" class="empty-state">
+                    <p>📭 Chưa có món ăn nào</p>
+                    <p class="empty-hint">Thêm món ăn để bắt đầu!</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="spinner-container">
+                <h1 class="main-title">🍜 Hôm Nay Ăn Gì?</h1>
+                
+                <div class="result-area">
+                    <div id="resultDisplay" class="result-display">
+                        <span id="resultText" class="result-text">???</span>
+                    </div>
+                </div>
+
+                <button id="spinButton" class="btn btn-spin" disabled>
+                    <span class="spin-icon">🎲</span>
+                    <span class="spin-text">QUAY NGAY</span>
+                </button>
+
+                <div class="decoration">
+                    <span class="emoji">🍕</span>
+                    <span class="emoji">🍔</span>
+                    <span class="emoji">🍜</span>
+                    <span class="emoji">🍱</span>
+                    <span class="emoji">🥗</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>✏️ Chỉnh sửa món ăn</h3>
+                <button class="modal-close" onclick="closeEditModal()">&times;</button>
+            </div>
+            <form id="editForm" class="edit-form">
+                <input 
+                    type="text" 
+                    id="editInput" 
+                    class="food-input" 
+                    placeholder="Nhập tên mới..."
+                    required
+                >
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-cancel" onclick="closeEditModal()">Hủy</button>
+                    <button type="submit" class="btn btn-save">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
