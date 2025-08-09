@@ -1,0 +1,19 @@
+echo "🔍 Running pre-commit checks..."
+
+# Prettier formatting
+echo "💅 Running Prettier formatting..."
+pnpm run format
+
+# ESLint auto-fix
+echo "🔧 Running ESLint auto-fix..."
+pnpm run lint:fix
+
+# ESLint linting
+echo "🔍 Running ESLint linting check..."
+pnpm run lint
+
+# Type checking
+echo "📝 Running TypeScript type check..."
+pnpm run type-check
+
+echo "✅ Pre-commit checks passed!"

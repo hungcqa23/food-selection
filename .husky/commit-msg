@@ -1,0 +1,2 @@
+echo "📝 Validating commit message..."
+pnpm run commitlint ${1}
